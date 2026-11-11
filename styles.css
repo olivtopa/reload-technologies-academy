@@ -166,7 +166,7 @@
   --radius-lg: 22px;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.09);
-  --sidebar-width: 280px;
+  --sidebar-width: 320px;
   --bottom-nav-height: 70px;
 }
 
@@ -354,14 +354,14 @@ select {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  padding: 11px 14px;
+  padding: 10px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   background: transparent;
   color: var(--text);
   font: inherit;
   font-weight: 600;
-  font-size: 0.93rem;
+  font-size: 0.91rem;
   text-align: left;
   cursor: pointer;
   transition: background-color 0.15s, border-color 0.15s;
@@ -379,12 +379,18 @@ select {
 }
 
 .nav-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.75rem;
-  padding: 2px 8px;
+  padding: 3px 9px;
   border-radius: 999px;
   background: var(--surface-elevated);
   color: var(--muted);
   font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.2;
 }
 
 .nav-item[aria-current="page"] .nav-badge {
@@ -621,6 +627,8 @@ h3 {
   letter-spacing: 0.02em;
   background: var(--brand-soft);
   color: var(--brand);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .pill.amber {
@@ -806,6 +814,7 @@ h3 {
   font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .chip-btn.active {
