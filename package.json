@@ -1,0 +1,9 @@
+{
+  "name": "reload-technologies-academy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Académie interactive, simulateur technique, studio marketing et cockpit d'exécution 90 jours pour Reload Technologies",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}

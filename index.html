@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    try {
+      document.querySelector('meta[name="color-scheme"]').content = localStorage.getItem("color-scheme") ?? "light dark";
+    } catch (e) {}
+  </script>
+  <meta name="theme-color" content="#0f766e">
+  <meta name="description" content="Reload Technologies · Plateforme pédagogique, simulateur technique 24V, boîte à outils marketing et cockpit d'accompagnement 90 jours (Rétro-ingénierie PCB, Devis Vocal IA & Simulateurs Éducatifs).">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Reload Technologies · Académie, Simulateurs & Cockpit 90 Jours</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link visually-hidden">Aller au contenu principal</a>
+
+  <div class="app-shell">
+    <!-- Barre latérale PC & Tablette paysage -->
+    <aside class="sidebar" aria-label="Menu latéral et progression">
+      <div class="brand-box">
+        <img src="icon.svg" alt="" class="brand-logo" width="42" height="42">
+        <div>
+          <span class="brand-title">Reload Technologies</span>
+          <span class="brand-sub">Académie · Simulateur · Cockpit</span>
+        </div>
+      </div>
+
+      <div class="global-progress-card">
+        <div class="global-progress-header">
+          <span>Progression Globale</span>
+          <span id="global-pct">0%</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="Avancement global du projet" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-fill" id="global-progress-fill" style="width: 0%;"></div>
+        </div>
+        <div id="global-progress-sub" class="muted" style="font-size:0.75rem; margin-top:6px;">
+          0/12 modules · 0/24 quiz
+        </div>
+      </div>
+
+      <nav aria-label="Principale">
+        <ul class="nav-list">
+          <li>
+            <button type="button" class="nav-item" data-nav-view="dashboard" aria-current="page">
+              <span>🧭 Cockpit & Stratégie</span>
+              <span class="nav-badge">3 Piliers</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-item" data-nav-view="academy">
+              <span>🎓 Académie (12 Modules)</span>
+              <span class="nav-badge" id="badge-academy">0/12</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-item" data-nav-view="evaluation">
+              <span>🏆 Quiz & Cas Pratiques</span>
+              <span class="nav-badge" id="badge-evaluation">0/24</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-item" data-nav-view="roadmap">
+              <span>🗓️ Plan 90j & Sprints 30j</span>
+              <span class="nav-badge" id="badge-roadmap">0/32</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-item" data-nav-view="tools">
+              <span>🛠️ Banc 24V, Audit & Calculs</span>
+              <span class="nav-badge">3 Outils</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-item" data-nav-view="marketing">
+              <span>🎯 Pitch, Marketing & Prompts</span>
+              <span class="nav-badge">Kit Pro</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button type="button" class="btn btn-secondary btn-sm" style="width:100%;" data-action="open-sync-modal">
+          ⚙️ Thème & Sync Mobile/PC
+        </button>
+      </div>
+    </aside>
+
+    <!-- Zone principale -->
+    <div class="workspace">
+      <!-- En-tête Smartphone & Tablette portrait -->
+      <header class="mobile-header">
+        <div class="brand-box" style="padding:0;">
+          <img src="icon.svg" alt="" class="brand-logo" style="width:34px; height:34px;">
+          <div>
+            <span class="brand-title" style="font-size:0.95rem;">Reload Cockpit</span>
+            <span class="brand-sub" style="font-size:0.7rem;">3 Piliers · Formation & Suivi</span>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn btn-secondary btn-sm" data-action="open-cert-modal" aria-label="Voir mon score et bilan">
+            🏆 Bilan
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" data-action="open-sync-modal" aria-label="Paramètres de thème et synchronisation">
+            ⚙️
+          </button>
+        </div>
+      </header>
+
+      <!-- Barre supérieure Desktop -->
+      <header class="topbar">
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <label for="global-search-input" class="visually-hidden">Rechercher une notion (ex. PNP, KiCad, Débours, Gemini, NF C 15-100)</label>
+          <input id="global-search-input" type="search" class="search-input" placeholder="Rechercher : PNP, TLP290, Débours, KiCad, Gemini, TVA 10%...">
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn btn-secondary btn-sm" data-action="open-cert-modal">
+            🎓 Bilan de Maîtrise
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" data-action="open-sync-modal">
+            📲 Synchroniser / Thème
+          </button>
+        </div>
+      </header>
+
+      <!-- Contenu principal dynamique -->
+      <main id="main-content" class="main-container" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <!-- Barre de navigation inférieure ergonomique pour Smartphone & Tablette -->
+  <nav class="bottom-nav" aria-label="Navigation mobile">
+    <button type="button" class="bottom-nav-btn" data-nav-view="dashboard" aria-current="page">
+      <span class="ico" aria-hidden="true">🧭</span>
+      <span>Cockpit</span>
+    </button>
+    <button type="button" class="bottom-nav-btn" data-nav-view="academy">
+      <span class="ico" aria-hidden="true">🎓</span>
+      <span>Cours</span>
+    </button>
+    <button type="button" class="bottom-nav-btn" data-nav-view="evaluation">
+      <span class="ico" aria-hidden="true">🏆</span>
+      <span>Quiz</span>
+    </button>
+    <button type="button" class="bottom-nav-btn" data-nav-view="roadmap">
+      <span class="ico" aria-hidden="true">🗓️</span>
+      <span>Plan 90j</span>
+    </button>
+    <button type="button" class="bottom-nav-btn" data-nav-view="tools">
+      <span class="ico" aria-hidden="true">🛠️</span>
+      <span>Outils</span>
+    </button>
+    <button type="button" class="bottom-nav-btn" data-nav-view="marketing">
+      <span class="ico" aria-hidden="true">🎯</span>
+      <span>Pitch</span>
+    </button>
+  </nav>
+
+  <!-- Modale native accessible avec light-dismiss -->
+  <dialog id="app-dialog" closedby="any" aria-labelledby="dialog-title">
+    <form method="dialog">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px;">
+        <h2 id="dialog-title" style="margin:0; font-size:1.25rem;">Détails</h2>
+        <button type="submit" class="btn btn-secondary btn-sm">Fermer ✕</button>
+      </div>
+      <div id="dialog-body"></div>
+    </form>
+  </dialog>
+
+  <!-- Régions d'annonces accessibles -->
+  <div id="polite-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+  <div id="toast-region" class="toast-region" aria-hidden="true"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "Reload Technologies · Académie & Cockpit Projet",
+  "short_name": "Reload Cockpit",
+  "description": "Plateforme pédagogique, simulateur technique, boîte à outils marketing et cockpit d'accompagnement 90 jours pour Reload Technologies (Rétro-ingénierie PCB, Devis Vocal IA & Simulateurs Éducatifs).",
+  "lang": "fr-FR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b1020",
+  "theme_color": "#0d9488",
+  "categories": ["education", "business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
